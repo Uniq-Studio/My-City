@@ -4,8 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import org.uniqstudio.mycity.data.RestaurantDataSource
-import org.uniqstudio.mycity.ui.RestaurantList
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import org.uniqstudio.mycity.ui.RestaurantScreen
 import org.uniqstudio.mycity.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -14,7 +18,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                    RestaurantList(RestaurantDataSource().loadRestaurants(), {})
+                Column {
+                    Spacer(modifier = Modifier.size(50.dp))
+                    RestaurantScreen()
+                }
             }
         }
     }

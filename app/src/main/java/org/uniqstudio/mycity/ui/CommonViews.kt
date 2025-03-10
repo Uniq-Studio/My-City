@@ -554,8 +554,8 @@ fun InfoPanel(
     @DrawableRes image: Int,
     @StringRes title: Int,
     @StringRes description: Int,
-    @StringRes subtext1: Int,
-    @StringRes subtext2: Int
+    @StringRes subText1: Int,
+    @StringRes subText2: Int
 ) {
     Box(
         modifier = Modifier
@@ -593,9 +593,9 @@ fun InfoPanel(
                 .align(Alignment.BottomCenter)
         ) {
             Row {
-                Box(modifier = Modifier.weight(1f)) { DescriptionText(text = subtext1) }
+                Box(modifier = Modifier.weight(1f)) { DescriptionText(text = subText1) }
                 Spacer(modifier = Modifier.size(10.dp))
-                Box(modifier = Modifier.weight(1f)) { DescriptionText(text = subtext2) }
+                Box(modifier = Modifier.weight(1f)) { DescriptionText(text = subText2) }
             }
         }
     }
@@ -608,7 +608,7 @@ fun InfoPanelPreview() {
         image = R.drawable.ic_launcher_background,
         title = R.string.app_name,
         description = R.string.app_name,
-        subtext1 = R.string.app_name,
-        subtext2 = R.string.app_name
+        subText1 = R.string.app_name,
+        subText2 = R.string.app_name
     )
 }
