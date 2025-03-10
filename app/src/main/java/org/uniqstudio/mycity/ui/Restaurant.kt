@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -15,10 +16,16 @@ import androidx.compose.ui.Modifier
 import org.uniqstudio.mycity.R
 import org.uniqstudio.mycity.data.RestaurantDataSource
 import org.uniqstudio.mycity.model.Restaurant
+import org.uniqstudio.mycity.model.RestaurantViewModel
 
 @Composable
-fun RestaurantScreen(){
+fun RestaurantScreen(
+    restaurantViewModel: RestaurantViewModel
+){
+    val restaurantUiState by restaurantViewModel.uiState.collectAsState()
+
     var isShowingList by remember { mutableStateOf(true) }
+
     Scaffold(
         topBar = {
             TopBar(
@@ -35,14 +42,16 @@ fun RestaurantScreen(){
             if (isShowingList) {
                 RestaurantList(
                     RestaurantDataSource().loadRestaurants(),
-                    { isShowingList = !isShowingList })
+                    restaurantViewModel,
+                    { isShowingList = !isShowingList }
+                )
             } else {
                 InfoPanel(
-                    image = RestaurantDataSource().loadRestaurants()[0].imageResourceId,
-                    title = RestaurantDataSource().loadRestaurants()[0].name,
-                    description = RestaurantDataSource().loadRestaurants()[0].description,
-                    subText1 = RestaurantDataSource().loadRestaurants()[0].location,
-                    subText2 = RestaurantDataSource().loadRestaurants()[0].rating,
+                    image = restaurantUiState.bannerResourceId,
+                    title = restaurantUiState.name,
+                    description = restaurantUiState.description,
+                    subText1 = restaurantUiState.location,
+                    subText2 = restaurantUiState.rating,
                 )
             }
         }
@@ -52,6 +61,7 @@ fun RestaurantScreen(){
 @Composable
 fun RestaurantList(
     restaurants: List<Restaurant>,
+    viewModel: RestaurantViewModel,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -62,7 +72,16 @@ fun RestaurantList(
         items(restaurants) { restaurant ->
             RestaurantCard(
                 restaurant = restaurant,
-                onClick = onClick
+                onClick = {
+                    viewModel.UpdateInfoPanel(
+                        bannerResourceId = restaurant.bannerResourceId,
+                        name = restaurant.name,
+                        description = restaurant.description,
+                        location = restaurant.location,
+                        rating = restaurant.rating
+                    )
+                    onClick()
+                }
             )
         }
     }

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.uniqstudio.mycity.model.RestaurantViewModel
 import org.uniqstudio.mycity.ui.RestaurantScreen
 import org.uniqstudio.mycity.ui.theme.AppTheme
 
@@ -20,7 +21,7 @@ class MainActivity : ComponentActivity() {
             AppTheme {
                 Column {
                     Spacer(modifier = Modifier.size(50.dp))
-                    RestaurantScreen()
+                    RestaurantScreen(restaurantViewModel = RestaurantViewModel())
                 }
             }
         }

@@ -163,7 +163,7 @@ fun DescriptionText(@StringRes text: Int) {
     Text(
         text = stringResource(text),
         style = MaterialTheme.typography.bodyMedium,
-        fontSize = 10.sp
+        fontSize = 15.sp
     )
 }
 
