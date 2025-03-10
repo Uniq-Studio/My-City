@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">My City</string>
+
+    <string name="welcome_to">Hey! Welcome to</string>
+    <string name="my_city">My City</string>
+    <string name="glasgow">Glasgow</string>
+
+    <!-- Restaurants -->
+    <string name="kg_name">Kitchen Glasgow</string>
+    <string name="kg_location">11 N Gower St, Glasgow G51 1PW</string>
+    <string name="kg_description">"Kitchen Glasgow is a restaurant based in Glasgow.\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\nThey offer; Coffee, Halal Food, Healthy Options, Quick Bites, Small Plates, Vegan Options and Vegetarian Options.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
+
+    <string name="ccr_name">Cioa\'s Cafe Restaurant</string>
+    <string name="ccr_location">473–477 Duke St, Glasgow G31 1RD</string>
+    <string name="ccr_description">"Coia’s Cafe Restaurant is a restaurant based in Glasgow that has Snacks and produce in adjoining cafe and delicatessen with homemade Italian ice cream and takeaway.\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\nThey offer; Alcohol, Beer, Cocktails, Coffee, Food, Healthy Options, Late Night Food, Quick Bite, Small Plates, Spirits, Vegan Options, Vegetarian Options and Wine.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
+
+    <string name="tlb_name">The Left Bank</string>
+    <string name="tlb_location">33–35 Gibson St, Glasgow G12 8NU</string>
+    <string name="tlb_description">"The Left Bank is a restaurant based in Glasgow that is a Trendy open-plan bar and kitchen serving homely breakfast, bar snacks or international dishes.\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\nThey offer; Alcohol, Beer, Cocktails, Coffee, Healthy Options, Late Night Food, Quick Bite, Small Plates, Spirits, Vegan Options, Vegetarian Options and Wine.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
+
+    <string name="tal_name">The Anchor Line</string>
+    <string name="tal_location">12–16 St Vincent Pl, Glasgow G1 2DH</string>
+    <string name="tal_description">"The Anchor Line is a restaurant based in Glasgow that's an Opulent New York-style bistro serving Scottish produce in the former first class booking offices.\nThey are popular for their; Lunch, Dinner and Solo Dining.\nThey offer; Alcohol, Beer, Cocktails, Coffee, Food, Food at Bar, Health Options, Late Night Food, Spirits, Wine.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
+
+    <!-- Price Rating-->
+    <string name="rating_one">$</string>
+    <string name="rating_two">$$</string>
+    <string name="rating_three">$$$</string>
+    <string name="rating_four">$$$$</string>
 </resources>
