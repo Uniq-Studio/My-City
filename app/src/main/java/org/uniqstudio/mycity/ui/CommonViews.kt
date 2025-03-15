@@ -19,6 +19,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
@@ -566,7 +568,10 @@ fun InfoPanel(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        Column() {
+        Column(
+            modifier = Modifier
+                .padding(bottom = 20.dp)
+        ) {
             Image(
                 painter = painterResource(image),
                 contentDescription = null,
@@ -581,6 +586,7 @@ fun InfoPanel(
             Column(
                 modifier = Modifier
                     .padding(10.dp)
+                    .verticalScroll(rememberScrollState())
             ) {
                 TitleText(text = title)
 
