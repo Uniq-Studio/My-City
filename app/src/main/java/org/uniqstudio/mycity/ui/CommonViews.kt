@@ -54,7 +54,8 @@ fun TopBar(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(50.dp)
+            .height(70.dp)
+            .padding(top = 20.dp)
     ) {
         //Back Button
         Box(
@@ -487,19 +488,23 @@ fun HorizontalImageInfoCard(
             .height(100.dp),
         onClick = onClick
     ) {
-        Row {
+        Row(
+            modifier = Modifier
+                .background(MaterialTheme.colorScheme.primaryContainer)
+        ) {
             Image(
                 painter = painterResource(image),
                 contentDescription = null,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(100.dp)
             )
+            Spacer(modifier = Modifier.size(5.dp))
 
             Column(
                 modifier = Modifier
                     .weight(3f)
                     .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.primaryContainer)
             ) {
 
                 Box(modifier = Modifier.weight(2f)) {
@@ -560,7 +565,6 @@ fun InfoPanel(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.primaryContainer)
     ) {
         Column() {
             Image(

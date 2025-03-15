@@ -126,7 +126,10 @@ fun RestaurantListAndInfo(
     subText2: Int,
     modifier: Modifier = Modifier
 ){
-    Row{
+    Row(
+        modifier = modifier
+            .padding(5.dp)
+    ){
         RestaurantList(
             restaurants = restaurants,
             viewModel = viewModel,
@@ -134,6 +137,7 @@ fun RestaurantListAndInfo(
             modifier = modifier
                 .weight(1f)
         )
+        Spacer(modifier = Modifier.size(5.dp))
         Box(
             modifier = modifier
                 .weight(2f)
