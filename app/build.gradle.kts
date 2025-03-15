@@ -1,5 +1,4 @@
 import org.gradle.kotlin.dsl.implementation
-import org.jetbrains.kotlin.cfg.pseudocode.and
 
 plugins {
     alias(libs.plugins.android.application)
@@ -54,6 +53,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation("androidx.compose.ui:ui-text-google-fonts:1.7.8")
+    implementation("androidx.compose.material3:material3-window-size-class")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
