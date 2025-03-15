@@ -1,4 +1,4 @@
-package org.uniqstudio.mycity.ui
+package org.uniqstudio.mycity.ui.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,6 +24,9 @@ import org.uniqstudio.mycity.R
 import org.uniqstudio.mycity.data.RestaurantDataSource
 import org.uniqstudio.mycity.model.Restaurant
 import org.uniqstudio.mycity.model.RestaurantViewModel
+import org.uniqstudio.mycity.ui.HorizontalImageInfoCard
+import org.uniqstudio.mycity.ui.InfoPanel
+import org.uniqstudio.mycity.ui.TopBar
 
 @Composable
 fun RestaurantScreen(

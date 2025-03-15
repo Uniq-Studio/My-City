@@ -6,6 +6,7 @@
     <string name="glasgow">Glasgow</string>
 
     <!-- Restaurants -->
+    <string name="restaurant_title">Restaurants</string>
     <string name="kg_name">Kitchen Glasgow</string>
     <string name="kg_location">11 N Gower St, Glasgow G51 1PW</string>
     <string name="kg_description">"Kitchen Glasgow is a restaurant based in Glasgow.\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\nThey offer; Coffee, Halal Food, Healthy Options, Quick Bites, Small Plates, Vegan Options and Vegetarian Options.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>

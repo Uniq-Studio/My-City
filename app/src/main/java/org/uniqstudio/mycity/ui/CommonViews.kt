@@ -78,9 +78,9 @@ fun TopBar(
         }
 
         //Text and Image
-        Column() {
+        Column {
             Spacer(modifier = Modifier.weight(1f))
-            Row() {
+            Row {
                 Image(
                     painter = painterResource(image),
                     contentDescription = null,
@@ -117,7 +117,7 @@ fun TitleText(@StringRes text: Int) {
     Text(
         text = stringResource(text),
         style = MaterialTheme.typography.headlineLarge,
-        fontSize = 45.sp,
+        fontSize = 35.sp,
     )
 }
 
