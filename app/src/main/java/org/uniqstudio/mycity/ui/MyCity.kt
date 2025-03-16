@@ -1,5 +1,6 @@
 package org.uniqstudio.mycity.ui
 
+import android.R.attr.name
 import androidx.annotation.StringRes
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
@@ -12,7 +13,9 @@ import org.uniqstudio.mycity.ui.screens.RestaurantScreen
 import org.uniqstudio.mycity.ui.screens.WelcomeScreen
 import androidx.navigation.compose.composable
 import org.uniqstudio.mycity.model.cafes.CafeViewModel
+import org.uniqstudio.mycity.model.kid_friendly.KidFriendlyViewModel
 import org.uniqstudio.mycity.ui.screens.CafeScreen
+import org.uniqstudio.mycity.ui.screens.KidFriendlyScreen
 import org.uniqstudio.mycity.ui.screens.ListOfActions
 
 enum class MyCityScreens(@StringRes val title: Int){
@@ -20,6 +23,7 @@ enum class MyCityScreens(@StringRes val title: Int){
     ListOfActions(title = R.string.loa_title),
     CoffeeShop(title = R.string.coffee_shops),
     Restaurant(title = R.string.restaurant_title),
+    KidFriendly(title = R.string.kid_friendly_places)
 }
 
 
@@ -36,7 +40,7 @@ fun MyCityApp(
             WelcomeScreen(
                 onClickCoffeeShops = { navController.navigate(MyCityScreens.CoffeeShop.name) },
                 onClickRestaurants = { navController.navigate(MyCityScreens.Restaurant.name) },
-                onClickKidFriendlyPlaces = {},
+                onClickKidFriendlyPlaces = { navController.navigate(MyCityScreens.KidFriendly.name) },
                 onClickParks = {},
                 onClickShoppingCenters = {},
                 windowSize = windowSize,
@@ -47,7 +51,7 @@ fun MyCityApp(
             ListOfActions(
                 onClickCoffeeShops = { navController.navigate(MyCityScreens.CoffeeShop.name) },
                 onClickRestaurants = { navController.navigate(MyCityScreens.Restaurant.name) },
-                onClickKidFriendlyPlaces = {},
+                onClickKidFriendlyPlaces = { navController.navigate(MyCityScreens.KidFriendly.name) },
                 onClickParks = {},
                 onClickShoppingCenters = {},
                 windowSize = windowSize
@@ -64,6 +68,13 @@ fun MyCityApp(
             RestaurantScreen(
                 onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
                 restaurantViewModel = RestaurantViewModel(),
+                windowSize = windowSize,
+            )
+        }
+        composable(route = MyCityScreens.KidFriendly.name) {
+            KidFriendlyScreen(
+                onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
+                kidFriendlyViewModel = KidFriendlyViewModel(),
                 windowSize = windowSize,
             )
         }
