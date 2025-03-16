@@ -14,6 +14,11 @@ import org.uniqstudio.mycity.ui.TitleText
 
 @Composable
 fun WelcomeScreen(
+    onClickCoffeeShops: () -> Unit,
+    onClickRestaurants: () -> Unit,
+    onClickKidFriendlyPlaces: () -> Unit,
+    onClickParks: () -> Unit,
+    onClickShoppingCenters: () -> Unit,
     windowSize: WindowSizeClass,
     onClickNext: () -> Unit
 ){
@@ -22,7 +27,13 @@ fun WelcomeScreen(
             WelcomeScreenPortrait(onClickNext)
         }
         else -> {
-            WelcomeScreenLandscape(onClickNext)
+            ListOfActionsLandscape(
+                onClickCoffeeShops = onClickCoffeeShops,
+                onClickRestaurants = onClickRestaurants,
+                onClickKidFriendlyPlaces = onClickKidFriendlyPlaces,
+                onClickParks = onClickParks,
+                onClickShoppingCenters = onClickShoppingCenters
+            )
         }
     }
 }

@@ -1,4 +1,4 @@
-package org.uniqstudio.mycity.data
+package org.uniqstudio.mycity.data.restaurant
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

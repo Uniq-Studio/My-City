@@ -1,9 +1,9 @@
-package org.uniqstudio.mycity.model
+package org.uniqstudio.mycity.model.cafes
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-data class Restaurant(
+data class Cafe(
     @DrawableRes val imageResourceId: Int,
     @DrawableRes val bannerResourceId: Int,
     @StringRes val name: Int,

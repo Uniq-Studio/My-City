@@ -21,20 +21,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.uniqstudio.mycity.R
-import org.uniqstudio.mycity.data.restaurant.RestaurantDataSource
-import org.uniqstudio.mycity.model.restaurant.Restaurant
-import org.uniqstudio.mycity.model.restaurant.RestaurantViewModel
+import org.uniqstudio.mycity.data.cafes.CafeDataSource
+import org.uniqstudio.mycity.model.cafes.Cafe
+import org.uniqstudio.mycity.model.cafes.CafeViewModel
 import org.uniqstudio.mycity.ui.HorizontalImageInfoCard
 import org.uniqstudio.mycity.ui.InfoPanel
 import org.uniqstudio.mycity.ui.TopBar
 
 @Composable
-fun RestaurantScreen(
+fun CafeScreen(
     onClickBack: () -> Unit,
-    restaurantViewModel: RestaurantViewModel,
+    cafeViewModel: CafeViewModel,
     windowSize: WindowSizeClass
 ) {
-    val restaurantUiState by restaurantViewModel.uiState.collectAsState()
+    val cafeUiState by cafeViewModel.uiState.collectAsState()
 
     var isShowingList by remember { mutableStateOf(true) }
 
@@ -42,7 +42,7 @@ fun RestaurantScreen(
         topBar = {
             TopBar(
                 image = R.drawable.logo_uniq,
-                text = R.string.restaurants,
+                text = R.string.coffee_shops,
                 goBack = true,
                 onClickBack = {
                     if (isShowingList) {
@@ -59,33 +59,33 @@ fun RestaurantScreen(
             when (windowSize.widthSizeClass) {
                 WindowWidthSizeClass.Compact -> {
                     if (isShowingList) {
-                        RestaurantList(
-                            RestaurantDataSource().loadRestaurants(),
-                            restaurantViewModel,
+                        CafeList(
+                            CafeDataSource().loadCafes(),
+                            cafeViewModel,
                             { isShowingList = !isShowingList }
                         )
                     } else {
                         InfoPanel(
-                            image = restaurantUiState.bannerResourceId,
-                            title = restaurantUiState.name,
-                            description = restaurantUiState.description,
-                            subText1 = restaurantUiState.location,
-                            subText2 = restaurantUiState.rating,
+                            image = cafeUiState.bannerResourceId,
+                            title = cafeUiState.name,
+                            description = cafeUiState.description,
+                            subText1 = cafeUiState.location,
+                            subText2 = cafeUiState.rating,
                         )
                     }
                 }
 
 
                 else -> {
-                    RestaurantListAndInfo(
-                        RestaurantDataSource().loadRestaurants(),
-                        restaurantViewModel,
+                    CafeListAndInfo(
+                        CafeDataSource().loadCafes(),
+                        cafeViewModel,
                         {},
-                        restaurantUiState.bannerResourceId,
-                        restaurantUiState.name,
-                        restaurantUiState.description,
-                        restaurantUiState.location,
-                        restaurantUiState.rating
+                        cafeUiState.bannerResourceId,
+                        cafeUiState.name,
+                        cafeUiState.description,
+                        cafeUiState.location,
+                        cafeUiState.rating
                     )
                 }
             }
@@ -94,9 +94,9 @@ fun RestaurantScreen(
 }
 
 @Composable
-fun RestaurantList(
-    restaurants: List<Restaurant>,
-    viewModel: RestaurantViewModel,
+fun CafeList(
+    cafes: List<Cafe>,
+    viewModel: CafeViewModel,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -104,16 +104,16 @@ fun RestaurantList(
         modifier = modifier
             .fillMaxSize()
     ) {
-        items(restaurants) { restaurant ->
-            RestaurantCard(
-                restaurant = restaurant,
+        items(cafes) { cafe ->
+            CafeCard(
+                cafe = cafe,
                 onClick = {
                     viewModel.updateInfoPanel(
-                        bannerResourceId = restaurant.bannerResourceId,
-                        name = restaurant.name,
-                        description = restaurant.description,
-                        location = restaurant.location,
-                        rating = restaurant.rating
+                        bannerResourceId = cafe.bannerResourceId,
+                        name = cafe.name,
+                        description = cafe.description,
+                        location = cafe.location,
+                        rating = cafe.rating
                     )
                     onClick()
                 }
@@ -124,9 +124,9 @@ fun RestaurantList(
 }
 
 @Composable
-fun RestaurantListAndInfo(
-    restaurants: List<Restaurant>,
-    viewModel: RestaurantViewModel,
+fun CafeListAndInfo(
+    cafes: List<Cafe>,
+    viewModel: CafeViewModel,
     onClick: () -> Unit,
     image: Int,
     title: Int,
@@ -139,8 +139,8 @@ fun RestaurantListAndInfo(
         modifier = modifier
             .padding(5.dp)
     ){
-        RestaurantList(
-            restaurants = restaurants,
+        CafeList(
+            cafes = cafes,
             viewModel = viewModel,
             onClick = onClick,
             modifier = modifier
@@ -163,16 +163,16 @@ fun RestaurantListAndInfo(
 }
 
 @Composable
-fun RestaurantCard(
-    restaurant: Restaurant,
+fun CafeCard(
+    cafe: Cafe,
     onClick: () -> Unit
 ){
     HorizontalImageInfoCard(
-        image = restaurant.imageResourceId,
-        title = restaurant.name,
-        description = restaurant.description,
-        subText1 = restaurant.location,
-        subText2 = restaurant.rating,
+        image = cafe.imageResourceId,
+        title = cafe.name,
+        description = cafe.description,
+        subText1 = cafe.location,
+        subText2 = cafe.rating,
         onClick = onClick,
     )
 }

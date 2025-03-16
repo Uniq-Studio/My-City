@@ -1,16 +1,16 @@
-package org.uniqstudio.mycity.model
+package org.uniqstudio.mycity.model.cafes
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import org.uniqstudio.mycity.data.RestaurantUiState
+import org.uniqstudio.mycity.data.restaurant.RestaurantUiState
 
-class RestaurantViewModel : ViewModel(){
+class CafeViewModel : ViewModel(){
     private val _uiState = MutableStateFlow(RestaurantUiState())
     val uiState: StateFlow<RestaurantUiState> = _uiState.asStateFlow()
 
-    fun UpdateInfoPanel (
+    fun updateInfoPanel (
         bannerResourceId: Int,
         name: Int,
         description: Int,
