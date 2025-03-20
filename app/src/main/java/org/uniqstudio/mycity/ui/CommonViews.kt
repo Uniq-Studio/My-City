@@ -516,9 +516,7 @@ fun HorizontalImageInfoCard(
                     )
                 }
 
-                Box(modifier = Modifier.weight(3f)) {
-                    DescriptionText(text = description)
-                }
+                Spacer(modifier = Modifier.weight(2f))
 
                 Row(
                     modifier = Modifier
@@ -531,8 +529,11 @@ fun HorizontalImageInfoCard(
 
                     Spacer(modifier = Modifier.size(5.dp))
 
-                    Box(
-                        modifier = Modifier.weight(1f)
+                    Row(
+                        modifier = Modifier.fillMaxWidth()
+                            .weight(1f)
+                            .padding(end = 5.dp),
+                        horizontalArrangement = Arrangement.End
                     ) {
                         DescriptionText(text = subText2)
                     }
