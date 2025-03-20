@@ -1,12 +1,12 @@
-package org.uniqstudio.mycity.data.cafes
+package org.uniqstudio.mycity.data.datasource
 
 import org.uniqstudio.mycity.R
-import org.uniqstudio.mycity.model.cafes.Cafe
+import org.uniqstudio.mycity.model.Place
 
 class CafeDataSource {
-    fun loadCafes(): List<Cafe> {
+    fun loadCafes(): List<Place> {
         return listOf(
-            Cafe(
+            Place(
                 imageResourceId = R.drawable.kg_photo,
                 bannerResourceId = R.drawable.kg_banner,
                 name = R.string.kg_name,
@@ -14,7 +14,7 @@ class CafeDataSource {
                 location = R.string.kg_location,
                 rating = R.string.rating_one
             ),
-            Cafe(
+            Place(
                 imageResourceId = R.drawable.ccr_photo,
                 bannerResourceId = R.drawable.ccr_banner,
                 name = R.string.ccr_name,
@@ -22,7 +22,7 @@ class CafeDataSource {
                 location = R.string.ccr_location,
                 rating = R.string.rating_two
             ),
-            Cafe(
+            Place(
                 imageResourceId = R.drawable.tlb_photo,
                 bannerResourceId = R.drawable.tlb_banner,
                 name = R.string.tlb_name,
@@ -30,7 +30,7 @@ class CafeDataSource {
                 location = R.string.tlb_location,
                 rating = R.string.rating_two
             ),
-            Cafe(
+            Place(
                 imageResourceId = R.drawable.tal_photo,
                 bannerResourceId = R.drawable.tal_banner,
                 name = R.string.tal_name,

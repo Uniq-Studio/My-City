@@ -7,17 +7,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import org.uniqstudio.mycity.R
-import org.uniqstudio.mycity.model.restaurant.RestaurantViewModel
-import org.uniqstudio.mycity.ui.screens.RestaurantScreen
 import org.uniqstudio.mycity.ui.screens.WelcomeScreen
 import androidx.navigation.compose.composable
-import org.uniqstudio.mycity.model.cafes.CafeViewModel
-import org.uniqstudio.mycity.model.kid_friendly.KidFriendlyViewModel
-import org.uniqstudio.mycity.model.parks.ParkViewModel
-import org.uniqstudio.mycity.ui.screens.CafeScreen
-import org.uniqstudio.mycity.ui.screens.KidFriendlyScreen
+import org.uniqstudio.mycity.data.datasource.CafeDataSource
+import org.uniqstudio.mycity.data.datasource.KidFriendlyDataSource
+import org.uniqstudio.mycity.data.datasource.ParkDataSource
+import org.uniqstudio.mycity.data.datasource.RestaurantDataSource
+import org.uniqstudio.mycity.data.datasource.ShoppingCenterSource
+import org.uniqstudio.mycity.model.PlaceViewModel
 import org.uniqstudio.mycity.ui.screens.ListOfActions
-import org.uniqstudio.mycity.ui.screens.ParkScreen
+import org.uniqstudio.mycity.ui.screens.PlaceScreen
 
 enum class MyCityScreens(@StringRes val title: Int){
     Welcome(title = R.string.welcome_to),
@@ -35,6 +34,13 @@ fun MyCityApp(
     navController: NavHostController = rememberNavController(),
     windowSize: WindowSizeClass,
 ){
+
+    val cafeDataSource = CafeDataSource()
+    val restaurantDataSource = RestaurantDataSource()
+    val kidFriendlyDataSource = KidFriendlyDataSource()
+    val parkDataSource = ParkDataSource()
+    val shoppingCenterSource = ShoppingCenterSource()
+
     NavHost(
         navController = navController,
         startDestination = MyCityScreens.Welcome.name
@@ -61,30 +67,47 @@ fun MyCityApp(
             )
         }
         composable(route = MyCityScreens.CoffeeShop.name) {
-            CafeScreen(
+            PlaceScreen(
+                screenName = R.string.coffee_shops,
+                place = cafeDataSource.loadCafes(),
                 onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
-                cafeViewModel = CafeViewModel(),
+                viewModel = PlaceViewModel(),
                 windowSize = windowSize,
             )
         }
         composable(route = MyCityScreens.Restaurant.name) {
-            RestaurantScreen(
+            PlaceScreen(
+                screenName = R.string.restaurants,
+                place = restaurantDataSource.loadRestaurants(),
                 onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
-                restaurantViewModel = RestaurantViewModel(),
+                viewModel = PlaceViewModel(),
                 windowSize = windowSize,
             )
         }
         composable(route = MyCityScreens.KidFriendly.name) {
-            KidFriendlyScreen(
+            PlaceScreen(
+                screenName = R.string.kid_friendly_places,
+                place = kidFriendlyDataSource.loadKidFriendly(),
                 onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
-                kidFriendlyViewModel = KidFriendlyViewModel(),
+                viewModel = PlaceViewModel(),
                 windowSize = windowSize,
             )
         }
         composable(route = MyCityScreens.Parks.name) {
-            ParkScreen(
+            PlaceScreen(
+                screenName = R.string.parks,
+                place = parkDataSource.loadPark(),
                 onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
-                parkViewModel = ParkViewModel(),
+                viewModel = PlaceViewModel(),
+                windowSize = windowSize,
+            )
+        }
+        composable(route = MyCityScreens.ShoppingCenters.name) {
+            PlaceScreen(
+                screenName = R.string.shopping_centers,
+                place = shoppingCenterSource.loadShops(),
+                onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
+                viewModel = PlaceViewModel(),
                 windowSize = windowSize,
             )
         }

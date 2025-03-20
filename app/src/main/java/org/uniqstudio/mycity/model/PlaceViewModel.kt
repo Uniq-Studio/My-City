@@ -1,14 +1,14 @@
-package org.uniqstudio.mycity.model.parks
+package org.uniqstudio.mycity.model
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import org.uniqstudio.mycity.data.parks.ParkUiState
+import org.uniqstudio.mycity.data.InfoPanelUiState
 
-class ParkViewModel : ViewModel(){
-    private val _uiState = MutableStateFlow(ParkUiState())
-    val uiState: StateFlow<ParkUiState> = _uiState.asStateFlow()
+class PlaceViewModel : ViewModel(){
+    private val _uiState = MutableStateFlow(InfoPanelUiState())
+    val uiState: StateFlow<InfoPanelUiState> = _uiState.asStateFlow()
 
     fun updateInfoPanel (
         bannerResourceId: Int,
@@ -17,7 +17,7 @@ class ParkViewModel : ViewModel(){
         location: Int,
         rating: Int
     ){
-        _uiState.value = ParkUiState(
+        _uiState.value = InfoPanelUiState(
             bannerResourceId = bannerResourceId,
             name = name,
             description = description,

@@ -1,9 +1,13 @@
 package org.uniqstudio.mycity.ui.screens
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import org.uniqstudio.mycity.R
 import org.uniqstudio.mycity.ui.BlankSpaceFiller
@@ -44,16 +48,21 @@ fun WelcomeScreenPortrait(
     onClickNext: () -> Unit
 ){
     Column(
-    ){
-        TitleText(R.string.welcome_to)
-        BoldTitleText(R.string.my_city)
-        SmallTextTitle(R.string.glasgow)
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Column {
+            TitleText(R.string.welcome_to)
+            BoldTitleText(R.string.my_city)
+            SmallTextTitle(R.string.glasgow)
 
-        BlankSpaceFiller()
+            BlankSpaceFiller()
 
-        NextButton(
-            onClickNext = onClickNext
-        )
+            NextButton(
+                onClickNext = onClickNext
+            )
+        }
     }
 }
 
@@ -61,14 +70,20 @@ fun WelcomeScreenPortrait(
 fun WelcomeScreenLandscape(
     onClickNext: () -> Unit
 ) {
-    Column {
-        TitleText(R.string.welcome_to)
-        BoldTitleText(R.string.my_city)
-        SmallTextTitle(R.string.glasgow)
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Column {
+            TitleText(R.string.welcome_to)
+            BoldTitleText(R.string.my_city)
+            SmallTextTitle(R.string.glasgow)
 
-        NextButton(
-            onClickNext = onClickNext
-        )
+            NextButton(
+                onClickNext = onClickNext
+            )
+        }
     }
 }
 

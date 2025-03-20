@@ -1,6 +1,5 @@
 package org.uniqstudio.mycity.ui.screens
 
-import android.R.attr.description
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,25 +20,22 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
 import org.uniqstudio.mycity.R
-import org.uniqstudio.mycity.data.cafes.CafeDataSource
-import org.uniqstudio.mycity.data.kid_friendly.KidFriendlyDataSource
-import org.uniqstudio.mycity.model.cafes.Cafe
-import org.uniqstudio.mycity.model.cafes.CafeViewModel
-import org.uniqstudio.mycity.model.kid_friendly.KidFriendly
-import org.uniqstudio.mycity.model.kid_friendly.KidFriendlyViewModel
+import org.uniqstudio.mycity.model.Place
+import org.uniqstudio.mycity.model.PlaceViewModel
 import org.uniqstudio.mycity.ui.HorizontalImageInfoCard
 import org.uniqstudio.mycity.ui.InfoPanel
 import org.uniqstudio.mycity.ui.TopBar
 
 @Composable
-fun KidFriendlyScreen(
+fun PlaceScreen(
+    screenName: Int,
+    place: List<Place>,
     onClickBack: () -> Unit,
-    kidFriendlyViewModel: KidFriendlyViewModel,
+    viewModel: PlaceViewModel,
     windowSize: WindowSizeClass
 ) {
-    val kidFriendlyUiState by kidFriendlyViewModel.uiState.collectAsState()
+    val placeUiState by viewModel.uiState.collectAsState()
 
     var isShowingList by remember { mutableStateOf(true) }
 
@@ -47,7 +43,7 @@ fun KidFriendlyScreen(
         topBar = {
             TopBar(
                 image = R.drawable.logo_uniq,
-                text = R.string.kid_friendly_places,
+                text = screenName,
                 goBack = true,
                 onClickBack = {
                     if (isShowingList) {
@@ -64,33 +60,33 @@ fun KidFriendlyScreen(
             when (windowSize.widthSizeClass) {
                 WindowWidthSizeClass.Compact -> {
                     if (isShowingList) {
-                        KidFriendlyList(
-                            KidFriendlyDataSource().loadKidFriendly(),
-                            kidFriendlyViewModel,
+                        PlaceList(
+                            place,
+                            viewModel,
                             { isShowingList = !isShowingList }
                         )
                     } else {
                         InfoPanel(
-                            image = kidFriendlyUiState.bannerResourceId,
-                            title = kidFriendlyUiState.name,
-                            description = kidFriendlyUiState.description,
-                            subText1 = kidFriendlyUiState.location,
-                            subText2 = kidFriendlyUiState.rating,
+                            image = placeUiState.bannerResourceId,
+                            title = placeUiState.name,
+                            description = placeUiState.description,
+                            subText1 = placeUiState.location,
+                            subText2 = placeUiState.rating,
                         )
                     }
                 }
 
 
                 else -> {
-                    KidFriendlyListAndInfo(
-                        KidFriendlyDataSource().loadKidFriendly(),
-                        kidFriendlyViewModel,
+                    PlaceListAndInfo(
+                        place,
+                        viewModel,
                         {},
-                        kidFriendlyUiState.bannerResourceId,
-                        kidFriendlyUiState.name,
-                        kidFriendlyUiState.description,
-                        kidFriendlyUiState.location,
-                        kidFriendlyUiState.rating
+                        placeUiState.bannerResourceId,
+                        placeUiState.name,
+                        placeUiState.description,
+                        placeUiState.location,
+                        placeUiState.rating
                     )
                 }
             }
@@ -99,9 +95,9 @@ fun KidFriendlyScreen(
 }
 
 @Composable
-fun KidFriendlyList(
-    kidFriendly: List<KidFriendly>,
-    viewModel: KidFriendlyViewModel,
+fun PlaceList(
+    place: List<Place>,
+    viewModel: PlaceViewModel,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -109,16 +105,16 @@ fun KidFriendlyList(
         modifier = modifier
             .fillMaxSize()
     ) {
-        items(kidFriendly) { kidFriendly ->
-            KidFriendlyCard(
-                kidFriendly = kidFriendly,
+        items(place) { place ->
+            PlaceCard(
+                place = place,
                 onClick = {
                     viewModel.updateInfoPanel(
-                        bannerResourceId = kidFriendly.bannerResourceId,
-                        name = kidFriendly.name,
-                        description = kidFriendly.description,
-                        location = kidFriendly.location,
-                        rating = kidFriendly.rating
+                        bannerResourceId = place.bannerResourceId,
+                        name = place.name,
+                        description = place.description,
+                        location = place.location,
+                        rating = place.rating
                     )
                     onClick()
                 }
@@ -129,9 +125,9 @@ fun KidFriendlyList(
 }
 
 @Composable
-fun KidFriendlyListAndInfo(
-    kidFriendly: List<KidFriendly>,
-    viewModel: KidFriendlyViewModel,
+fun PlaceListAndInfo(
+    place: List<Place>,
+    viewModel: PlaceViewModel,
     onClick: () -> Unit,
     image: Int,
     title: Int,
@@ -144,8 +140,8 @@ fun KidFriendlyListAndInfo(
         modifier = modifier
             .padding(5.dp)
     ){
-        KidFriendlyList(
-            kidFriendly = kidFriendly,
+        PlaceList(
+            place = place,
             viewModel = viewModel,
             onClick = onClick,
             modifier = modifier
@@ -168,16 +164,16 @@ fun KidFriendlyListAndInfo(
 }
 
 @Composable
-fun KidFriendlyCard(
-    kidFriendly: KidFriendly,
+fun PlaceCard(
+    place: Place,
     onClick: () -> Unit
 ){
     HorizontalImageInfoCard(
-        image = kidFriendly.imageResourceId,
-        title = kidFriendly.name,
-        description = kidFriendly.description,
-        subText1 = kidFriendly.location,
-        subText2 = kidFriendly.rating,
+        image = place.imageResourceId,
+        title = place.name,
+        description = place.description,
+        subText1 = place.location,
+        subText2 = place.rating,
         onClick = onClick,
     )
 }

@@ -1,12 +1,12 @@
-package org.uniqstudio.mycity.data.restaurant
+package org.uniqstudio.mycity.data.datasource
 
 import org.uniqstudio.mycity.R
-import org.uniqstudio.mycity.model.restaurant.Restaurant
+import org.uniqstudio.mycity.model.Place
 
 class RestaurantDataSource {
-    fun loadRestaurants(): List<Restaurant> {
+    fun loadRestaurants(): List<Place> {
         return listOf(
-            Restaurant(
+            Place(
                 imageResourceId = R.drawable.kg_photo,
                 bannerResourceId = R.drawable.kg_banner,
                 name = R.string.kg_name,
@@ -14,7 +14,7 @@ class RestaurantDataSource {
                 location = R.string.kg_location,
                 rating = R.string.rating_one
             ),
-            Restaurant(
+            Place(
                 imageResourceId = R.drawable.ccr_photo,
                 bannerResourceId = R.drawable.ccr_banner,
                 name = R.string.ccr_name,
@@ -22,7 +22,7 @@ class RestaurantDataSource {
                 location = R.string.ccr_location,
                 rating = R.string.rating_two
             ),
-            Restaurant(
+            Place(
                 imageResourceId = R.drawable.tlb_photo,
                 bannerResourceId = R.drawable.tlb_banner,
                 name = R.string.tlb_name,
@@ -30,7 +30,7 @@ class RestaurantDataSource {
                 location = R.string.tlb_location,
                 rating = R.string.rating_two
             ),
-            Restaurant(
+            Place(
                 imageResourceId = R.drawable.tal_photo,
                 bannerResourceId = R.drawable.tal_banner,
                 name = R.string.tal_name,

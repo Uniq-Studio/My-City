@@ -1,10 +1,10 @@
-package org.uniqstudio.mycity.data.kid_friendly
+package org.uniqstudio.mycity.data
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import org.uniqstudio.mycity.R
 
-data class KidFriendlyUiState (
+data class InfoPanelUiState (
     @DrawableRes val bannerResourceId: Int = R.drawable.kg_banner,
     @StringRes val name: Int = R.string.kg_name,
     @StringRes val description: Int = R.string.kg_description,

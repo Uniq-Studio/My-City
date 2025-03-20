@@ -5,11 +5,15 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -60,20 +64,42 @@ fun ListOfActionsPortrait(
     onClickShoppingCenters: () -> Unit
 ){
     Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        TitleText(R.string.loa_title)
-        BoldTitleText(R.string.loa_subtext)
+        Column {
+            TitleText(R.string.loa_title)
+            BoldTitleText(R.string.loa_subtext)
 
-        Spacer(modifier = Modifier.size(30.dp))
+            Spacer(modifier = Modifier.size(30.dp))
 
-        Column(
-            verticalArrangement = Arrangement.spacedBy(5.dp)
-        ) {
-            WideButtonBar(text = R.string.coffee_shops, bold = false, onClick = onClickCoffeeShops)
-            WideButtonBar(text = R.string.restaurants, bold = false, onClick = onClickRestaurants)
-            WideButtonBar(text = R.string.kid_friendly_places, bold = false, onClick = onClickKidFriendlyPlaces)
-            WideButtonBar(text = R.string.parks, bold = false, onClick = onClickParks)
-            WideButtonBar(text = R.string.shopping_centers, bold = false, onClick = onClickShoppingCenters)
+            Column(
+                verticalArrangement = Arrangement.spacedBy(5.dp),
+                modifier = Modifier.verticalScroll(rememberScrollState())
+            ) {
+                WideButtonBar(
+                    text = R.string.coffee_shops,
+                    bold = false,
+                    onClick = onClickCoffeeShops
+                )
+                WideButtonBar(
+                    text = R.string.restaurants,
+                    bold = false,
+                    onClick = onClickRestaurants
+                )
+                WideButtonBar(
+                    text = R.string.kid_friendly_places,
+                    bold = false,
+                    onClick = onClickKidFriendlyPlaces
+                )
+                WideButtonBar(text = R.string.parks, bold = false, onClick = onClickParks)
+                WideButtonBar(
+                    text = R.string.shopping_centers,
+                    bold = false,
+                    onClick = onClickShoppingCenters
+                )
+            }
         }
     }
 }
@@ -92,18 +118,24 @@ fun ListOfActionsLandscape(
         Box(
             modifier = Modifier.weight(1f)
         ) {
-            Column{
-                BlankSpaceFiller()
+            Column(
 
-                TitleText(R.string.welcome_to)
-                BoldTitleText(R.string.my_city)
-                SmallTextTitle(R.string.glasgow)
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,) {
+                Column {
+                    TitleText(R.string.welcome_to)
+                    BoldTitleText(R.string.my_city)
+                    SmallTextTitle(R.string.glasgow)
 
-                BlankSpaceFiller()
+                    BlankSpaceFiller()
+                }
             }
         }
         Column(
             modifier = Modifier.weight(1f)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             ListOfActionsPortrait(
                 onClickCoffeeShops = onClickCoffeeShops,
