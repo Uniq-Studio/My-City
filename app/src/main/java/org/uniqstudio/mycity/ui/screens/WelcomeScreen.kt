@@ -1,6 +1,7 @@
 package org.uniqstudio.mycity.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
@@ -14,6 +15,7 @@ import org.uniqstudio.mycity.ui.BlankSpaceFiller
 import org.uniqstudio.mycity.ui.BoldTitleText
 import org.uniqstudio.mycity.ui.NextButton
 import org.uniqstudio.mycity.ui.SmallTextTitle
+import org.uniqstudio.mycity.ui.TappableText
 import org.uniqstudio.mycity.ui.TitleText
 
 @Composable
@@ -23,23 +25,34 @@ fun WelcomeScreen(
     onClickKidFriendlyPlaces: () -> Unit,
     onClickParks: () -> Unit,
     onClickShoppingCenters: () -> Unit,
+    onClickAbout: () -> Unit,
     windowSize: WindowSizeClass,
     onClickNext: () -> Unit
 ){
-    when (windowSize.widthSizeClass) {
-        WindowWidthSizeClass.Compact -> {
-            WelcomeScreenPortrait(onClickNext)
+
+        when (windowSize.widthSizeClass) {
+            WindowWidthSizeClass.Compact -> {
+                WelcomeScreenPortrait(onClickNext)
+            }
+
+            else -> {
+                Box {
+                ListOfActionsLandscape(
+                    onClickCoffeeShops = onClickCoffeeShops,
+                    onClickRestaurants = onClickRestaurants,
+                    onClickKidFriendlyPlaces = onClickKidFriendlyPlaces,
+                    onClickParks = onClickParks,
+                    onClickShoppingCenters = onClickShoppingCenters
+                )
+                    TappableText(
+                        modifier = Modifier.align(Alignment.BottomCenter),
+                        text = R.string.about_screen,
+                        onClick = onClickAbout
+                    )
+                }
+            }
         }
-        else -> {
-            ListOfActionsLandscape(
-                onClickCoffeeShops = onClickCoffeeShops,
-                onClickRestaurants = onClickRestaurants,
-                onClickKidFriendlyPlaces = onClickKidFriendlyPlaces,
-                onClickParks = onClickParks,
-                onClickShoppingCenters = onClickShoppingCenters
-            )
-        }
-    }
+
 }
 
 

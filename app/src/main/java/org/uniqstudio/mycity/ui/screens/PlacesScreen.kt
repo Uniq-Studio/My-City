@@ -171,7 +171,6 @@ fun PlaceCard(
     HorizontalImageInfoCard(
         image = place.imageResourceId,
         title = place.name,
-        description = place.description,
         subText1 = place.location,
         subText2 = place.rating,
         onClick = onClick,

@@ -164,8 +164,9 @@ fun SmallTextTitlePreview() {
 
 
 @Composable
-fun DescriptionText(@StringRes text: Int) {
+fun DescriptionText(modifier: Modifier = Modifier, @StringRes text: Int) {
     Text(
+        modifier = modifier,
         text = stringResource(text),
         style = MaterialTheme.typography.bodyMedium,
         fontSize = 15.sp
@@ -218,10 +219,11 @@ fun TitleAndParagraph(modifier: Modifier = Modifier, @StringRes title: Int, @Str
         )
         Spacer(modifier = Modifier.size(10.dp))
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-            DescriptionText(text)
+            DescriptionText(text = text)
         }
     }
 }
+
 @Preview
 @Composable
 fun TitleAndParagraphPreview() {
@@ -407,6 +409,21 @@ fun SquareImageButtonPreview() {
     }
 }
 
+
+@Composable
+fun TappableText(
+    modifier: Modifier = Modifier,
+    @StringRes text: Int,
+    onClick: () -> Unit
+){
+    DescriptionText(
+        modifier = modifier
+            .clickable(
+                onClick = onClick
+            ),
+        text = text
+    )
+}
 
 @Composable
 fun HiddenDetailsBox(

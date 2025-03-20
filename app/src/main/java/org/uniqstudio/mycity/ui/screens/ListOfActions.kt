@@ -21,6 +21,7 @@ import org.uniqstudio.mycity.R
 import org.uniqstudio.mycity.ui.BlankSpaceFiller
 import org.uniqstudio.mycity.ui.BoldTitleText
 import org.uniqstudio.mycity.ui.SmallTextTitle
+import org.uniqstudio.mycity.ui.TappableText
 import org.uniqstudio.mycity.ui.TitleText
 import org.uniqstudio.mycity.ui.WideButtonBar
 
@@ -31,27 +32,36 @@ fun ListOfActions(
     onClickKidFriendlyPlaces: () -> Unit,
     onClickParks: () -> Unit,
     onClickShoppingCenters: () -> Unit,
+    onClickAbout: () -> Unit,
     windowSize: WindowSizeClass
-){
-    when (windowSize.widthSizeClass) {
-        WindowWidthSizeClass.Compact -> {
-            ListOfActionsPortrait(
-                onClickCoffeeShops = onClickCoffeeShops,
-                onClickRestaurants = onClickRestaurants,
-                onClickKidFriendlyPlaces = onClickKidFriendlyPlaces,
-                onClickParks = onClickParks,
-                onClickShoppingCenters = onClickShoppingCenters
-            )
+) {
+    Box {
+        when (windowSize.widthSizeClass) {
+            WindowWidthSizeClass.Compact -> {
+                ListOfActionsPortrait(
+                    onClickCoffeeShops = onClickCoffeeShops,
+                    onClickRestaurants = onClickRestaurants,
+                    onClickKidFriendlyPlaces = onClickKidFriendlyPlaces,
+                    onClickParks = onClickParks,
+                    onClickShoppingCenters = onClickShoppingCenters
+                )
+            }
+
+            else -> {
+                ListOfActionsLandscape(
+                    onClickCoffeeShops = onClickCoffeeShops,
+                    onClickRestaurants = onClickRestaurants,
+                    onClickKidFriendlyPlaces = onClickKidFriendlyPlaces,
+                    onClickParks = onClickParks,
+                    onClickShoppingCenters = onClickShoppingCenters
+                )
+            }
         }
-        else -> {
-            ListOfActionsLandscape(
-                onClickCoffeeShops = onClickCoffeeShops,
-                onClickRestaurants = onClickRestaurants,
-                onClickKidFriendlyPlaces = onClickKidFriendlyPlaces,
-                onClickParks = onClickParks,
-                onClickShoppingCenters = onClickShoppingCenters
-            )
-        }
+        TappableText(
+            modifier = Modifier.align(Alignment.BottomCenter),
+            text = R.string.about_screen,
+            onClick = onClickAbout
+        )
     }
 }
 

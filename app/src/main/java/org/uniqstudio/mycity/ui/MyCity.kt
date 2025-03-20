@@ -49,7 +49,7 @@ fun MyCityApp(
 
     NavHost(
         navController = navController,
-        startDestination = MyCityScreens.AboutCreator.name
+        startDestination = MyCityScreens.Welcome.name
     ){
         composable(route = MyCityScreens.Welcome.name) {
             WelcomeScreen(
@@ -58,6 +58,7 @@ fun MyCityApp(
                 onClickKidFriendlyPlaces = { navController.navigate(MyCityScreens.KidFriendly.name) },
                 onClickParks = { navController.navigate(MyCityScreens.Parks.name) },
                 onClickShoppingCenters = { navController.navigate(MyCityScreens.ShoppingCenters.name) },
+                onClickAbout = { navController.navigate(MyCityScreens.AboutApp.name) },
                 windowSize = windowSize,
                 onClickNext = { navController.navigate(MyCityScreens.ListOfActions.name) }
             )
@@ -69,6 +70,7 @@ fun MyCityApp(
                 onClickKidFriendlyPlaces = { navController.navigate(MyCityScreens.KidFriendly.name) },
                 onClickParks = { navController.navigate(MyCityScreens.Parks.name)},
                 onClickShoppingCenters = { navController.navigate(MyCityScreens.ShoppingCenters.name) },
+                onClickAbout = { navController.navigate(MyCityScreens.AboutApp.name) },
                 windowSize = windowSize
             )
         }
