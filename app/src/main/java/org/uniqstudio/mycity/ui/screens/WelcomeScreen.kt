@@ -55,7 +55,7 @@ fun WelcomeScreenPortrait(
         Column {
             TitleText(R.string.welcome_to)
             BoldTitleText(R.string.my_city)
-            SmallTextTitle(R.string.glasgow)
+            SmallTextTitle(text = R.string.glasgow)
 
             BlankSpaceFiller()
 
@@ -78,7 +78,7 @@ fun WelcomeScreenLandscape(
         Column {
             TitleText(R.string.welcome_to)
             BoldTitleText(R.string.my_city)
-            SmallTextTitle(R.string.glasgow)
+            SmallTextTitle(text = R.string.glasgow)
 
             NextButton(
                 onClickNext = onClickNext

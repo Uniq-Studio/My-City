@@ -1,6 +1,5 @@
 package org.uniqstudio.mycity.ui
 
-
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.animation.animateContentSize
@@ -19,6 +18,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -113,11 +113,12 @@ fun TopBarPreview() {
 
 
 @Composable
-fun TitleText(@StringRes text: Int) {
+fun TitleText(@StringRes text: Int, bold: Boolean = false, extraThin: Boolean = false, largeText: Boolean = false) {
     Text(
         text = stringResource(text),
         style = MaterialTheme.typography.headlineLarge,
-        fontSize = 35.sp,
+        fontSize = if (largeText) 50.sp else 35.sp,
+        fontWeight = if (bold) FontWeight.Bold else if (extraThin) FontWeight.ExtraLight else FontWeight.Normal
     )
 }
 
@@ -146,11 +147,12 @@ fun BoldTitleTextPreview() {
 
 
 @Composable
-fun SmallTextTitle(@StringRes text: Int) {
+fun SmallTextTitle(modifier: Modifier = Modifier, @StringRes text: Int) {
     Text(
         text = stringResource(text),
         style = MaterialTheme.typography.bodySmall,
         fontSize = 20.sp,
+        modifier = modifier
     )
 }
 
@@ -202,6 +204,32 @@ fun TextForUIPreview() {
         TextForUI(text = R.string.app_name, bold = true)
         TextForUI(text = R.string.app_name, bold = false)
     }
+}
+
+
+@Composable
+fun TitleAndParagraph(modifier: Modifier = Modifier, @StringRes title: Int, @StringRes text: Int, bold: Boolean = false){
+    Column(
+        modifier = modifier
+    ) {
+        TitleText(
+            text = title,
+            bold = bold
+        )
+        Spacer(modifier = Modifier.size(10.dp))
+        Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+            DescriptionText(text)
+        }
+    }
+}
+@Preview
+@Composable
+fun TitleAndParagraphPreview() {
+    TitleAndParagraph(
+        title = R.string.app_name,
+        text = R.string.app_name,
+        bold = true
+    )
 }
 
 
@@ -264,10 +292,9 @@ fun WideButtonBar(@StringRes text: Int, bold: Boolean, onClick: () -> Unit) {
     }
 }
 
-@Suppress("PreviewShouldNotBeCalledRecursively")
 @Preview
 @Composable
-fun WideButtonBar() {
+fun WideButtonBarPreview() {
     Column {
         WideButtonBar(text = R.string.app_name, bold = true, onClick = {})
         Spacer(modifier = Modifier.size(5.dp))
@@ -477,15 +504,15 @@ fun HiddenDetailsPreview() {
 
 @Composable
 fun HorizontalImageInfoCard(
+    modifier: Modifier = Modifier,
     @DrawableRes image: Int,
     @StringRes title: Int,
-    @StringRes description: Int,
     @StringRes subText1: Int,
     @StringRes subText2: Int,
     onClick: () -> Unit = {}
 ) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .height(100.dp),
         onClick = onClick
@@ -550,7 +577,6 @@ fun HorizontalImageInfoCardPreview() {
     HorizontalImageInfoCard(
         image = R.drawable.ic_launcher_background,
         title = R.string.app_name,
-        description = R.string.app_name,
         subText1 = R.string.app_name,
         subText2 = R.string.app_name
     )
@@ -584,17 +610,12 @@ fun InfoPanel(
 
             Spacer(modifier = Modifier.size(10.dp))
 
-            Column(
-                modifier = Modifier
-                    .padding(10.dp)
-                    .verticalScroll(rememberScrollState())
-            ) {
-                TitleText(text = title)
-
-                Spacer(modifier = Modifier.size(10.dp))
-
-                DescriptionText(text = description)
-            }
+            TitleAndParagraph(
+                title = title,
+                text = description,
+                bold = true,
+                modifier = Modifier.padding(bottom = 10.dp)
+            )
         }
 
         Column(
@@ -604,14 +625,13 @@ fun InfoPanel(
                 .align(Alignment.BottomCenter)
         ) {
             Row {
-                Box(modifier = Modifier.weight(1f)) { DescriptionText(text = subText1) }
+                Box(modifier = Modifier.weight(2f)) { DescriptionText(text = subText1) }
                 Spacer(modifier = Modifier.size(10.dp))
-                Box(modifier = Modifier.weight(1f)) { DescriptionText(text = subText2) }
+                Row(modifier = Modifier.weight(1f).fillMaxWidth(), horizontalArrangement = Arrangement.End) { DescriptionText(text = subText2) }
             }
         }
     }
 }
-
 @Preview
 @Composable
 fun InfoPanelPreview() {
@@ -621,5 +641,82 @@ fun InfoPanelPreview() {
         description = R.string.app_name,
         subText1 = R.string.app_name,
         subText2 = R.string.app_name
+    )
+}
+
+
+@Composable
+fun ImageTitleAndDescription(
+    @DrawableRes image: Int,
+    @StringRes title: Int,
+    @StringRes description: Int,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+    ){
+        Image(
+            painter = painterResource(image),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth,
+            modifier = Modifier.size(150.dp)
+        )
+
+        TitleText(
+            text = title,
+            bold = false,
+            extraThin = true,
+            largeText = true
+        )
+
+        Text(
+            //Displays title in thick, light gray font
+            text =stringResource(description),
+            fontSize = 15.sp,
+            fontWeight = FontWeight.ExtraBold,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+    }
+}
+@Preview
+@Composable
+fun ImageTitleAndDescriptionPreview() {
+    ImageTitleAndDescription(
+        image = R.drawable.ic_launcher_background,
+        title = R.string.app_name,
+        description = R.string.app_name
+    )
+}
+
+@Composable
+fun ImageInlineText(
+    @DrawableRes image: Int,
+    @StringRes text: Int,
+    modifier: Modifier = Modifier
+){
+    Row(
+        modifier = modifier
+            .width(225.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
+    ){
+        Image(
+            painter = painterResource(image),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth,
+            modifier = Modifier.size(25.dp)
+        )
+        DescriptionText(
+            text = text
+        )
+    }
+}
+@Preview
+@Composable
+fun ImageInlineTextPreview() {
+    ImageInlineText(
+        R.drawable.logo_uniq,
+        R.string.app_name
     )
 }

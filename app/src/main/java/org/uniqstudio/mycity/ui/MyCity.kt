@@ -15,17 +15,23 @@ import org.uniqstudio.mycity.data.datasource.ParkDataSource
 import org.uniqstudio.mycity.data.datasource.RestaurantDataSource
 import org.uniqstudio.mycity.data.datasource.ShoppingCenterSource
 import org.uniqstudio.mycity.model.PlaceViewModel
+import org.uniqstudio.mycity.ui.screens.AboutCreator
+import org.uniqstudio.mycity.ui.screens.AboutScreen
 import org.uniqstudio.mycity.ui.screens.ListOfActions
 import org.uniqstudio.mycity.ui.screens.PlaceScreen
 
 enum class MyCityScreens(@StringRes val title: Int){
     Welcome(title = R.string.welcome_to),
     ListOfActions(title = R.string.loa_title),
+
     CoffeeShop(title = R.string.coffee_shops),
     Restaurant(title = R.string.restaurant_title),
     KidFriendly(title = R.string.kid_friendly_places),
     Parks(title = R.string.parks),
-    ShoppingCenters(title = R.string.shopping_centers)
+    ShoppingCenters(title = R.string.shopping_centers),
+
+    AboutApp(title = R.string.about_screen),
+    AboutCreator(title = R.string.about_creator)
 }
 
 
@@ -43,7 +49,7 @@ fun MyCityApp(
 
     NavHost(
         navController = navController,
-        startDestination = MyCityScreens.Welcome.name
+        startDestination = MyCityScreens.AboutCreator.name
     ){
         composable(route = MyCityScreens.Welcome.name) {
             WelcomeScreen(
@@ -109,6 +115,21 @@ fun MyCityApp(
                 onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
                 viewModel = PlaceViewModel(),
                 windowSize = windowSize,
+            )
+        }
+        composable(route = MyCityScreens.AboutApp.name){
+            AboutScreen(
+                screenName = R.string.about_screen,
+                onClickBack = { navController.navigate(MyCityScreens.ListOfActions.name) },
+                onClickCreator = { navController.navigate(MyCityScreens.AboutCreator.name) },
+                windowSize = windowSize
+            )
+        }
+        composable(route = MyCityScreens.AboutCreator.name){
+            AboutCreator(
+                screenName = R.string.about_creator,
+                onClickBack = { navController.navigate(MyCityScreens.AboutApp.name) },
+                windowSize = windowSize
             )
         }
     }

@@ -15,23 +15,45 @@
     <string name="parks">Parks</string>
     <string name="shopping_centers">Shopping Centers</string>
 
+    <!-- About Screen -->
+    <string name="about_screen">About</string>
+
+    <string name="about_title">About My City</string>
+    <string name="about_text">My City is a mobile application designed to help new people discover Glasgow. Users can select from a variety of; Cafes, Restaurants, Kid Friendly Places, Parks and Shopping Centres.\n\nThe app incorporates logic to see what type of screen size the user is using. Using the screen effectively why still having the beautiful and Uniq look, no matter the device and screen size or orientation.\n\nNote: This application is a personal project developed to showcase the skill and knowledge gained from Google’s “Android Basic with Compose” course.</string>
+
+    <string name="about_resources">Resources used</string>
+    <string name="about_resources_text">The places Images used are for Illustrative purposes only and are sourced form the company website</string>
+
+    <string name="about_disclaimer">Disclaimer</string>
+    <string name="about_disclaimer_text">This app is intended for personal use and entertainment purposes only. This application lacks external connectivity, rendering all data potentially outdated or inaccurate.\n\nThis app is a personal project and is not intended for commercial use. It utilises resources from various sources for educational and experimental purposes.</string>
+
+    <string name="about_creator">About the Creator</string>
+    <string name="about_creator_name">Aaron Hamilton</string>
+    <string name="about_creator_subtitle">Android Developer @ Uniq Studio</string>
+    <string name="about_creator_number">+44 7444 555 666</string>
+    <string name="about_creator_social">\@aaron-hamil5</string>
+    <string name="about_creator_email">aaron.hamil5@gmail.com</string>
+
+
+
+
     <!-- Restaurants -->
     <string name="restaurant_title">Restaurants</string>
     <string name="kg_name">Kitchen Glasgow</string>
     <string name="kg_location">11 N Gower St, Glasgow G51 1PW</string>
-    <string name="kg_description">"Kitchen Glasgow is a restaurant based in Glasgow.\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\nThey offer; Coffee, Halal Food, Healthy Options, Quick Bites, Small Plates, Vegan Options and Vegetarian Options.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
+    <string name="kg_description">"Kitchen Glasgow is a restaurant based in Glasgow.\n\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\n\nThey offer; Coffee, Halal Food, Healthy Options, Quick Bites, Small Plates, Vegan Options and Vegetarian Options.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
 
     <string name="ccr_name">Cioa\'s Cafe Restaurant</string>
     <string name="ccr_location">473–477 Duke St, Glasgow G31 1RD</string>
-    <string name="ccr_description">"Coia’s Cafe Restaurant is a restaurant based in Glasgow that has Snacks and produce in adjoining cafe and delicatessen with homemade Italian ice cream and takeaway.\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\nThey offer; Alcohol, Beer, Cocktails, Coffee, Food, Healthy Options, Late Night Food, Quick Bite, Small Plates, Spirits, Vegan Options, Vegetarian Options and Wine.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
+    <string name="ccr_description">"Coia’s Cafe Restaurant is a restaurant based in Glasgow that has Snacks and produce in adjoining cafe and delicatessen with homemade Italian ice cream and takeaway.\n\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\n\nThey offer; Alcohol, Beer, Cocktails, Coffee, Food, Healthy Options, Late Night Food, Quick Bite, Small Plates, Spirits, Vegan Options, Vegetarian Options and Wine.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
 
     <string name="tlb_name">The Left Bank</string>
     <string name="tlb_location">33–35 Gibson St, Glasgow G12 8NU</string>
-    <string name="tlb_description">"The Left Bank is a restaurant based in Glasgow that is a Trendy open-plan bar and kitchen serving homely breakfast, bar snacks or international dishes.\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\nThey offer; Alcohol, Beer, Cocktails, Coffee, Healthy Options, Late Night Food, Quick Bite, Small Plates, Spirits, Vegan Options, Vegetarian Options and Wine.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
+    <string name="tlb_description">"The Left Bank is a restaurant based in Glasgow that is a Trendy open-plan bar and kitchen serving homely breakfast, bar snacks or international dishes.\n\nThey are popular for their; Breakfast, Lunch, Dinner and Solo Dining.\n\nThey offer; Alcohol, Beer, Cocktails, Coffee, Healthy Options, Late Night Food, Quick Bite, Small Plates, Spirits, Vegan Options, Vegetarian Options and Wine.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
 
     <string name="tal_name">The Anchor Line</string>
     <string name="tal_location">12–16 St Vincent Pl, Glasgow G1 2DH</string>
-    <string name="tal_description">"The Anchor Line is a restaurant based in Glasgow that's an Opulent New York-style bistro serving Scottish produce in the former first class booking offices.\nThey are popular for their; Lunch, Dinner and Solo Dining.\nThey offer; Alcohol, Beer, Cocktails, Coffee, Food, Food at Bar, Health Options, Late Night Food, Spirits, Wine.\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
+    <string name="tal_description">"The Anchor Line is a restaurant based in Glasgow that's an Opulent New York-style bistro serving Scottish produce in the former first class booking offices.\n\nThey are popular for their; Lunch, Dinner and Solo Dining.\n\nThey offer; Alcohol, Beer, Cocktails, Coffee, Food, Food at Bar, Health Options, Late Night Food, Spirits, Wine.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
 
     <!-- Price Rating-->
     <string name="rating_one">$</string>

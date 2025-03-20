@@ -125,7 +125,7 @@ fun ListOfActionsLandscape(
                 Column {
                     TitleText(R.string.welcome_to)
                     BoldTitleText(R.string.my_city)
-                    SmallTextTitle(R.string.glasgow)
+                    SmallTextTitle(text = R.string.glasgow)
 
                     BlankSpaceFiller()
                 }
