@@ -35,7 +35,22 @@
     <string name="about_creator_email">aaron.hamil5@gmail.com</string>
 
 
+    <!-- Coffee Shops -->
+    <string name="sc_name">Sexy Coffee</string>
+    <string name="sc_location">115 Union St, Glasgow G1 3TA</string>
+    <string name="sc_description">Sexy Coffee is a restaurant based in Glasgow.\n\nThey are popular for their; Breakfast and Solo dining.\n\nThey offer; Alcohol, Cocktails, Coffee and Quick bite\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay.</string>
 
+    <string name="tgc_name">The Glad Cafe</string>
+    <string name="tgc_location">1006A Pollokshaws Rd, Glasgow G41 2HG</string>
+    <string name="tgc_description">The Glad Cafe is a restaurant based in Glasgow. \n\nThey are popular for their; Breakfast, Lunch, Dinner, Solo dining and Good for working on laptop. \n\nThey offer; Alcohol, Beer, Cocktail, Coffee, Free water refills, Healthy options, Organic dishes, Quick bites, Small plates, Spirits, Vegan options, Vegetarian options and Wine\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay.</string>
+
+    <string name="kc_name">Kelvingrove Cafe</string>
+    <string name="kc_location">1161 Argyle St, Finnieston, Glasgow G3 8TB</string>
+    <string name="kc_description">Kelvingrove Café is a restaurant based in Glasgow. \n\nThey are popular for their; Breakfast, Lunch, Dinner, Solo dining and Good for working on laptop. \n\nThey offer; Alcohol, Beer, Cocktail, Coffee, Quick bite, Small plate, Spirits and Wine.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay.</string>
+
+    <string name="oc_name">Oasis Cafe</string>
+    <string name="oc_location">The Renfield Centre, 260 Bath St, Glasgow G2 4JP</string>
+    <string name="oc_description">Oasis Cafe is a restaurant based in Glasgow. \n\nThey are popular for their; Breakfast, Lunch and Solo dining. \n\nThey offer; Coffee, Free water refills, Prepared foods, Quick bite and Vegetarian options\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards.</string>
 
     <!-- Restaurants -->
     <string name="restaurant_title">Restaurants</string>
@@ -55,7 +70,60 @@
     <string name="tal_location">12–16 St Vincent Pl, Glasgow G1 2DH</string>
     <string name="tal_description">"The Anchor Line is a restaurant based in Glasgow that's an Opulent New York-style bistro serving Scottish produce in the former first class booking offices.\n\nThey are popular for their; Lunch, Dinner and Solo Dining.\n\nThey offer; Alcohol, Beer, Cocktails, Coffee, Food, Food at Bar, Health Options, Late Night Food, Spirits, Wine.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay."</string>
 
+    <!-- Kid Friendly Places -->
+    <string name="cw_name">The Childrens Wood</string>
+    <string name="cw_location">76 Kelbourne St, Glasgow G20 8PR</string>
+    <string name="cw_description">This is a park in Glasgow.\n\nIt has swings and is dog friendly.\n\nEnjoy the local park.</string>
+
+    <string name="tp_name">Tollcross Park</string>"
+    <string name="tp_location">254B Wellshot Rd, Glasgow G32 7AX</string>
+    <string name="tp_description">This is a Scenic park with a rose garden, a winter garden and a small zoo for kids with various farm animals.\n\nIt has Swings, Picnic tables, Slides and is dog friendly.\n\nEnjoy the local park.</string>
+
+    <string name="wwsp_name">Wonder World Soft Play</string>
+    <string name="wwsp_location">99 Middlesex St, Kinning Park, Glasgow G41 1EE</string>
+    <string name="wwsp_description">This is a softplay centre with themed adventure areas, an astro-turf football pitch, a cafe and a restaurant..\n\nIt has Football pitches and an area to clime.\n\nEnjoy the soft play.</string>
+
+    <string name="mp_name">Maxwell Parks</string>
+    <string name="mp_location">126 Terregles Ave, Glasgow G41 4DQ</string>
+    <string name="mp_description">This is a park in Glasgow.\n\nIt has Swings, Picnic tables, Slides and is dog friendly.\n\nEnjoy the local park.</string>
+
+    <!-- Parks -->
+    <string name="qp_name">Queen\'s Park</string>
+    <string name="qp_location">Langside Rd, Glasgow G42 9QL</string>
+    <string name="qp_description">This is a park in Glasgow.\n\nIt has Basketball, Tennis courts, Picnic tables, Skateboarding, Slides, Swings and is dog friendly.\n\nEnjoy the local park.</string>
+
+    <string name="kp_name">Kelvingrove Park</string>
+    <string name="kp_location">Park Terrace, Glasgow G3 6BY</string>
+    <string name="kp_description">This is a park in Glasgow.\n\nIt has Tennis courts, Picnic tables, Public toilets, Skateboarding, Slides, Swings and is dog friendly.\n\nEnjoy the local park.</string>
+
+    <string name="pcp_name">Pollok Country Park</string>
+    <string name="pcp_location">2060 Pollokshaws Rd, Bellahouston, Glasgow G43 1AT</string>
+    <string name="pcp_description">This is a park in Glasgow.\n\nIt has Swings, Picnic tables, Public toilet, Slides and is dog friendly.\n\nEnjoy the local park.</string>
+
+    <string name="bp_name">Bellahouston Park</string>
+    <string name="bp_location">16 Dumbreck Rd, Bellahouston, Glasgow G41 5BW</string>
+    <string name="bp_description">This is a extensive park with orienteering, bowling, vivid flower/herb displays and historic granite stone..\n\nIt has Swings, Picnic tables, Public toilet, Slides and is dog friendly.\n\nEnjoy the local park.</string>
+
+    <!-- Shopping Centers -->
+    <string name="sec_name">St. Enoch Centre</string>
+    <string name="sec_location">55 St Enoch Sq, Glasgow G1 4BW</string>
+    <string name="sec_description">Sizable mall on 3 floors with department store, fashion boutiques and music shops, plus dining.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay.</string>
+
+    <string name="bg_name">Buchanan Galleries</string>
+    <string name="bg_location">220 Buchanan St, Glasgow G1 2FF</string>
+    <string name="bg_description">Mall housing department store plus 90 fashion, electrical and gift outlets, and restaurants.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay.</string>
+
+    <string name="ps_name">Princes Square by M</string>
+    <string name="ps_location">Princes Square, 48 Buchanan St, Glasgow G1 3JN</string>
+    <string name="ps_description">Shopping mall food court with Spanish tapas, Italian and grill options as well as stylish bars.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay.</string>
+
+    <string name="fsc_name">The Forge Shopping Centre</string>
+    <string name="fsc_location">1221 Gallowgate, Glasgow G31 4EB</string>
+    <string name="fsc_description">Shopping mall hosting a supermarket, eateries and events, plus a cinema and family entertainment centre.\n\nCome on down and give them a try, they support payments of; Cash, Credit Cards, Debit Cards, NFC Payments, Google and Apple Pay.</string>
+
+
     <!-- Price Rating-->
+    <string name="rating_free">FREE</string>
     <string name="rating_one">$</string>
     <string name="rating_two">$$</string>
     <string name="rating_three">$$$</string>

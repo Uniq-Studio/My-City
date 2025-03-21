@@ -7,36 +7,36 @@ class KidFriendlyDataSource {
     fun loadKidFriendly(): List<Place> {
         return listOf(
             Place(
-                imageResourceId = R.drawable.kg_photo,
-                bannerResourceId = R.drawable.kg_banner,
-                name = R.string.kg_name,
-                description = R.string.kg_description,
-                location = R.string.kg_location,
+                imageResourceId = R.drawable.cw_photo,
+                bannerResourceId = R.drawable.cw_banner,
+                name = R.string.cw_name,
+                description = R.string.cw_description,
+                location = R.string.cw_location,
+                rating = R.string.rating_free
+            ),
+            Place(
+                imageResourceId = R.drawable.tp_photo,
+                bannerResourceId = R.drawable.tp_banner,
+                name = R.string.tp_name,
+                description = R.string.tp_description,
+                location = R.string.tp_location,
+                rating = R.string.rating_free
+            ),
+            Place(
+                imageResourceId = R.drawable.wwsp_photo,
+                bannerResourceId = R.drawable.wwsp_banner,
+                name = R.string.wwsp_name,
+                description = R.string.wwsp_description,
+                location = R.string.wwsp_location,
                 rating = R.string.rating_one
             ),
             Place(
-                imageResourceId = R.drawable.ccr_photo,
-                bannerResourceId = R.drawable.ccr_banner,
-                name = R.string.ccr_name,
-                description = R.string.ccr_description,
-                location = R.string.ccr_location,
-                rating = R.string.rating_two
-            ),
-            Place(
-                imageResourceId = R.drawable.tlb_photo,
-                bannerResourceId = R.drawable.tlb_banner,
-                name = R.string.tlb_name,
-                description = R.string.tlb_description,
-                location = R.string.tlb_location,
-                rating = R.string.rating_two
-            ),
-            Place(
-                imageResourceId = R.drawable.tal_photo,
-                bannerResourceId = R.drawable.tal_banner,
-                name = R.string.tal_name,
-                description = R.string.tal_description,
-                location = R.string.tal_location,
-                rating = R.string.rating_two
+                imageResourceId = R.drawable.mp_photo,
+                bannerResourceId = R.drawable.mp_banner,
+                name = R.string.mp_name,
+                description = R.string.mp_description,
+                location = R.string.mp_location,
+                rating = R.string.rating_free
             ),
         )
     }
