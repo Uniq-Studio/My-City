@@ -1,55 +1,32 @@
-# My City
+# <img src="https://www.uniqstudio.org/images/my_city_icon.webp" alt="My City Logo" width="25"/> My City
 
-## Overview
+Meet **My City**, the simple mobile app that helps you **discover** the best spots in Glasgow. Whether you're looking for a new café, restaurant, or park, My City **makes exploring easy**. Just choose what you want to do, and you'll get a **curated** list of places to visit—helping you uncover your next favourite spot in the city.
 
-My City is a mobile application designed to help new people discover Glasgow. Users can select from a variety of; Cafes, Restaurants, Kid Friendly Places, Parks and Shopping Centres.
+## ✨ Features
+- **Simplicity**
+    > Simplified UI shows you everything you need to know so you can send less screen time
+- **To The Point**
+    > No ads or sponsored post, find what *you* want.
+- **For all devices**
+    > Adapts to all screen sizes, so the app looks great on any screen
 
-The app incorporates logic to see what type of screen size the user is using. Using the screen effectively why still having the beautiful and Uniq look, no matter the device and screen size or orientation.
+## 🛠️ Tech Stack
+- **Languages**: Kotlin 
+- **Frameworks**: Jetpack Compose
+- **Platform Targets**: Android
+- **Other Tools**: AndroidX, Kotlin Coroutines, Flow
 
-Note: This application is a personal project developed to showcase the skill and knowledge gained from Google’s “Android Basic with Compose” course.
 
-## Features
+## 🚀 Deployment
+Download My City - Glasgow!
 
-* **Categorized Listings:**
-    * Displays lists of coffee shops, restaurants, kid-friendly places, parks, and shopping centers.
-    * Each category has its own dedicated screen for easy browsing.
-    * Displays the place's name, location discription and price range
-* **Jetpack Navigation:**
-    * Uses Jetpack Navigation for smooth and efficient navigation between different screens.
-* **Clean Architecture:**
-    * Maintains a clear separation between the UI layer and the data layer.
-* **ViewModel:**
-    * Utilizes a ViewModel to manage UI state and updates.
-* **Adaptive Layouts:**
-    * Designed to adapt to various screen sizes, ensuring a consistent user experience on different devices.
-* **Material Design:**
-    * Follows Material Design guidelines for adaptive design and navigation, providing a modern and intuitive interface.
+  > [Download for Android](https://github.com/Uniq-Studio/My-City/releases/download/1.0/my_city_gla.apk)
 
-## Technologies Used
+## 📬 Contact
+- **Email:** aaron.hamil5@gmail.com
+- **LinkedIn:** www.linkedin.com/in/aaron-hamil5
+- **GitHub:** www.github.com/aaron-hamil5
 
-* **Jetpack Compose:** For building native Android UI.
-* **Jetpack Navigation:** For managing in-app navigation.
-* **ViewModel:** For managing UI-related data in a lifecycle-conscious way.
-* **Kotlin:** As the primary programming language.
-* **Material Design:** For UI/UX consistency.
-
-## Usage
-
-* Upon launching the app, you will be welcomed then see a list of categories: coffee shops, restaurants, kid-friendly places, parks, and shopping centers.
-* Tap on a category to view the list of places in that category.
-* Navigate back to the main category screen by using the back button or top app bar back navigation.
-* The application will adapt to the screen size of your device.
-
-## Resources used
-
-The places Images used are for Illustrative purposes only and are sourced form the company website
-
-## Disclaimer
-
-This app is intended for personal use and entertainment purposes only. This application lacks external connectivity, rendering all data potentially outdated or inaccurate.
-
-This app is a personal project and is not intended for commercial use. It utilises resources from various sources for educational and experimental purposes.
-
-## Author
-
-Aaron Hamilton
+## 🙏 Acknowledgements
+ - [ChatGPT: Debugging and Improvements](https://www.chatgpt.com/)
+ - [Android Basics with Compose Course](https://developer.android.com/courses/android-basics-compose/course)
